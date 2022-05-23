@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">WeatherApplication</string>
+
+    <string name="download_error">Ошибка загрузки данных</string>
+
+    <!--WeatherFragment-->
+    <string name="fragment_weather_wind">Ветер: %1s %2s</string>
+    <string name="fragment_weather_pressure">Давление: %1s %2s</string>
+    <string name="fragment_weather_humidity">Влажность: %1s \%%</string>
+    <string name="fragment_weather_meters_per_second">м/с</string>
+    <string name="fragment_weather_miles_per_hour">мл/ч</string>
+    <string name="fragment_weather_default_city">Москва</string>
+    <string name="fragment_weather_undefined_city">*****</string>
+
+    <!--MenuFragment-->
+    <string name="fragment_menu_title">Меню</string>
+    <string name="fragment_menu_choose_city">Выбор города</string>
+    <string name="fragment_menu_settings">Настройки</string>
+
+    <!--ChooseCityFragment-->
+    <string name="fragment_choose_city_title">Выбор города</string>
+    <string name="fragment_choose_city_input_city_name">Введите название города</string>
+    <string name="fragment_choose_city_viewed_cities">Просмотренные города</string>
+    <string name="fragment_choose_city_by_location"><u>Определить по местоположению</u></string>
+    <string name="fragment_choose_access_location_title">Отсутствует разрешение на определение местоположения</string>
+    <string name="fragment_choose_access_location">Для определения местоположения необходимо перейти в настройки приложения и предоставить доступ к Вашей геопозиции</string>
+    <string name="fragment_choose_location_timeout">Не удалось определить местоположение</string>
+
+    <!--SettingsFragment-->
+    <string name="fragment_settings_title">Настройки</string>
+    <string name="fragment_settings_forecast_title">Настройка прогноза погоды</string>
+    <string name="fragment_settings_amount_days">Количество дней</string>
+    <string name="fragment_settings_units">Единицы измерения</string>
+    <string name="fragment_settings_temperature">Температура</string>
+    <string name="fragment_settings_celsius">C</string>
+    <string name="fragment_settings_fahrenheit">F</string>
+    <string name="fragment_settings_wind">Сила ветра</string>
+    <string name="fragment_settings_millimetre_of_mercury">мм.рт.ст</string>
+    <string name="fragment_settings_hectopascal">гПа</string>
+    <string-array name="amount_days_in_forecast">
+        <item>7</item>
+        <item>14</item>
+        <item>21</item>
+        <item>28</item>
+        <item>35</item>
+    </string-array>
+
+</resources>

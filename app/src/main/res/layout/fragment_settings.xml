@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="16dp"
+    android:paddingBottom="16dp"
+    android:background="@color/background_3">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/container_background">
+
+        <TextView
+            android:id="@+id/forecast_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/fragment_settings_forecast_title"
+            android:textColor="@color/text_1"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/amount_days_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/fragment_settings_amount_days"
+            android:textColor="@color/text_2"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/amount_days_spinner_container"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/forecast_title"
+            app:layout_constraintVertical_bias="0" />
+
+        <FrameLayout
+            android:id="@+id/amount_days_spinner_container"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/amount_days_title"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@id/amount_days_title"
+            app:layout_constraintTop_toTopOf="@id/amount_days_title">
+
+            <Spinner
+                android:id="@+id/amount_days_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:entries="@array/amount_days_in_forecast"
+                android:maxLines="1" />
+
+        </FrameLayout>
+
+        <View
+            android:id="@+id/amount_days_separate_line"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/background_3"
+            app:layout_constraintEnd_toEndOf="@id/amount_days_spinner_container"
+            app:layout_constraintStart_toStartOf="@id/amount_days_spinner_container"
+            app:layout_constraintTop_toBottomOf="@id/amount_days_spinner_container" />
+
+        <TextView
+            android:id="@+id/units_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/fragment_settings_units"
+            android:textColor="@color/text_1"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/amount_days_separate_line"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/temperature_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/fragment_settings_temperature"
+            android:textColor="@color/text_2"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/temperature_switch"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/units_title"
+            app:layout_constraintVertical_bias="0" />
+
+        <com.example.weatherapplication.ui.view.CustomSwitchView
+            android:id="@+id/temperature_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:firstItemText="@string/fragment_settings_celsius"
+            app:layout_constraintBottom_toBottomOf="@id/temperature_title"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@+id/temperature_title"
+            app:layout_constraintTop_toTopOf="@id/temperature_title"
+            app:secondItemText="@string/fragment_settings_fahrenheit" />
+
+        <TextView
+            android:id="@+id/wind_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/fragment_settings_wind"
+            android:textColor="@color/text_2"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/pressure_switch"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintTop_toBottomOf="@id/temperature_title"
+            app:layout_constraintVertical_bias="0" />
+
+        <com.example.weatherapplication.ui.view.CustomSwitchView
+            android:id="@+id/pressure_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:firstItemText="@string/fragment_settings_millimetre_of_mercury"
+            app:layout_constraintBottom_toBottomOf="@id/wind_title"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@+id/wind_title"
+            app:layout_constraintTop_toTopOf="@id/wind_title"
+            app:secondItemText="@string/fragment_settings_hectopascal" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start_guideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end_guideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
